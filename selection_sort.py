@@ -3,9 +3,9 @@ def selection_sort(arr):
     for i in range(n):
         min_idx = i
         for j in range(i + 1, n):
-            if arr[j] > arr[min_idx]:  # ❌ Wrong comparison
+            if arr[j] < arr[min_idx]:  # ✅ Correct comparison
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
 
-print(selection_sort([64, 25, 12, 22, 11]))  # Expected [11, 12, 22, 25, 64]
+print(selection_sort([64, 25, 12, 22, 11]))
